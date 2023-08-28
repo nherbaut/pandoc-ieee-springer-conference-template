@@ -17,6 +17,8 @@ jobs:
       with:
         packages: librsvg2-bin texlive-full build-essential
         version: 1.0
+    - name: rehash latex
+      run: texconfig rehash
     - name: Installing pandoc
       run: wget https://github.com/jgm/pandoc/releases/download/3.1.6.2/pandoc-3.1.6.2-1-amd64.deb && sudo dpkg -i pandoc-3.1.6.2-1-amd64.deb
     
