@@ -32,3 +32,9 @@ Use the makefile:
 ```
 make all
 ```
+
+# GitHub Action
+
+a github action is provided, and build automatically and publish a new release with what you push on the master branch. To use it, make sure to allow gitHub Action to write your repo
+
+![](doc/githubaction.png)
