@@ -18,4 +18,6 @@ pdf:
 
 clean:
 	rm build/*
-
+resources.zip: clean pdf
+	zip build/resources.zip build/*
+	
