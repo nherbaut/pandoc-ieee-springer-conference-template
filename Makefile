@@ -3,7 +3,7 @@ FILES = paper.md
 OUTPUT = build
 
 FLAGS = --bibliography=bibliography.bib \
-		--pdf-engine=xelatex\
+		--pdf-engine=pdflatex\
 		--csl=templates/bibliography.csl \
 		-s \
 		-f markdown
