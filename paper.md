@@ -3,7 +3,7 @@ title: Praesent aliquam turpis sed est imperdiet,
 author:
   - name: John Doe, Jane Doe
     affiliation: 'Université Paris 1 Panthéon-Sorbonne'
-    location: Paris, France
+    location: Bordeaux, France
     email: first.last@univ-paris1.fr
 keywords:
   - fringilla
