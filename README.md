@@ -1,4 +1,8 @@
-# Quick edit/render with VS COde 
+Fed up with latex and want to write a paper for an IEEE Conference? This template repository uses pandoc so that the Markdown content of `paper.md` is automatically converted in a IEEE conference compatible pdf.
+
+You'll need to install the necessary tooling for it to work, or simply use a github action to produce the pdf. In that case, everything you'll be pushing on the master branch will trigger an action building the pdf, and the result will be attached as a new release for the repository.
+
+# Quick edit/render with VS Code 
 
 Install Recommanded VSCode extension to edit markdown IEEE template:
 
