@@ -13,8 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Installing pandoc, librsvg, tex and make
-      run: sudo apt update && sudo apt install librsvg2-bin texlive-full build-essential --yes && wget https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb && sudo dpkg -i pandoc-2.19.2-1-amd64.deb
+    - uses: awalsh128/cache-apt-pkgs-action@latest
+      with:
+        packages: librsvg2-bin texlive-full build-essential
+        version: 1.0
+    - name: Installing pandoc
+      run: wget https://github.com/jgm/pandoc/releases/download/3.1.6.2/pandoc-3.1.6.2-1-amd64.deb && sudo dpkg -i pandoc-3.1.6.2-1-amd64.deb
     
     - name: build pdf
       run: pandoc --version && pandoc --help && ls $PWD && make
