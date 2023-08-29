@@ -9,8 +9,13 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - name: "Generating PDF from pandoc"
+        uses: docker://nherbaut/pandoc-latex-ieee:latest
+        with:
+          args: "--citeproc -o build/paper.pdf --bibliography=bibliography.bib --pdf-engine=pdflatex --csl=templates/bibliography.csl -s -f markdown --template=templates/template.latex paper.md" 
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: paper.md
+          files: build/paper.pdf
+            
