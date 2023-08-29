@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: "Generating PDF"
-        uses: docker://pandoc/latex:2.9
+        uses: docker://pandoc/latex:3-alpine
         with:
           args: "--citeproc -o build/paper.pdf --bibliography=bibliography.bib --pdf-engine=pdflatex --csl=templates/bibliography.csl -s -f markdown --template=templates/template.latex paper.md" 
       - name: Create Tag
