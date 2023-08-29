@@ -20,4 +20,11 @@ clean:
 	rm build/*
 resources.zip: clean pdf
 	zip build/resources.zip build/*
-	
+
+docker-build: 
+	docker build . -t nherbaut/pandoc-latex-ieee
+
+docker-push:
+	docker push nherbaut/pandoc-latex-ieee
+
+docker: docker-build docker-push
