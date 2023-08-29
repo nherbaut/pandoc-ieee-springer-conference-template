@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "Generating PDF"
-        uses: docker://pandoc/latex:3-alpine
+        uses: docker://nherbaut/pandoc-latex-ieee:latest
         with:
           args: "--citeproc -o build/paper.pdf --bibliography=bibliography.bib --pdf-engine=pdflatex --csl=templates/bibliography.csl -s -f markdown --template=templates/template.latex paper.md" 
       - name: Create Tag
