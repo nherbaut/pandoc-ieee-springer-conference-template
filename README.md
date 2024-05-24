@@ -1,4 +1,4 @@
-Fed up with latex and want to write a paper for an IEEE Conference? This template repository uses pandoc so that the Markdown content of `paper.md` is automatically converted in a IEEE conference compatible pdf.
+Fed up with latex and want to write a paper for an IEEE or Springer format Conference? This template repository uses pandoc so that the Markdown content of `paper.md` is automatically converted in a IEEE or Springer conference compatible pdf.
 
 You'll need to install the necessary tooling for it to work, or simply use a github action to produce the pdf. In that case whenever a new tag is pushed, pandoc will produce the PDF and attach it to the new release corresponding to the new tag.
 
