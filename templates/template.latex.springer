@@ -1,17 +1,18 @@
-\documentclass[conference]{IEEEtran}
-\IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.21 of 2022/01/12
+%
+\documentclass[runningheads,xcolor=dvipsnames]{llncs}
+
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
-\usepackage{xcolor}
-\usepackage{listings}
+\usepackage{lipsum}
 
-$for(header-includes)$
-$header-includes$
-$endfor$
+\usepackage{listings}
 
 \definecolor{delim}{RGB}{20,105,176}
 \definecolor{numb}{RGB}{106, 109, 32}
@@ -48,6 +49,7 @@ $endfor$
       {]}{{{\color{delim}{]}}}}{1},
 }
 
+
 \usepackage[colorlinks]{hyperref}
 
 $if(csl-refs)$
@@ -76,51 +78,79 @@ $if(csl-refs)$
 $endif$
 
 
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+%
+\usepackage[T1]{fontenc}
+% T1 fonts will be used to generate the final print and online PDFs,
+% so please use T1 fonts in your manuscript whenever possible.
+% Other font encondings may result in incorrect characters.
+%
+\usepackage{graphicx}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following two lines
+% to display URLs in blue roman font according to Springer's eBook style:
+%\usepackage{color}
+%\renewcommand\UrlFont{\color{blue}\rmfamily}
+%
 \begin{document}
-
+%
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{First Author\inst{1}\orcidID{0000-1111-2222-3333} \and
+Second Author\inst{2,3}\orcidID{1111-2222-3333-4444} \and
+Third Author\inst{3}\orcidID{2222--3333-4444-5555}}
 
 \author{
     $for(author)$
-        \IEEEauthorblockN{$author.name$}
-        \IEEEauthorblockA{%
-            $author.affiliation$ \\
-            $author.location$ \\
-            $author.email$}
-        $sep$ \and
+        $author.name$
+        $sep$ \and\and
     $endfor$
 }
+%
 
-\maketitle
-
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{Princeton University, Princeton NJ 08544, USA \and
+Springer Heidelberg, Tiergartenstr. 17, 69121 Heidelberg, Germany
+\email{lncs@springer.com}\\
+\url{http://www.springer.com/gp/computer-science/lncs} \and
+ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
+\email{\{abc,lncs\}@uni-heidelberg.de}}
+%
+\maketitle              % typeset the header of the contribution
+%
 \begin{abstract}
-$abstract$
-\end{abstract}
+    $abstract$
+    \end{abstract}
 
 $if(keywords)$
-\begin{IEEEkeywords}
+\keywords{
 $for(keywords)$
     $keywords$$sep$;
 $endfor$
-\end{IEEEkeywords}
+}
 $endif$
 
 $body$
 
+%
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+%
+
 $if(biblatex)$
-\bibliographystyle{IEEEtran}
+\bibliographystyle{splncs04}
   \bibliographytrue
   \printbibliography[heading=none]
   \printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
 $endif$
-
-
-
-
-
 
 \end{document}
