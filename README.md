@@ -22,6 +22,18 @@ Publisher: Yu Zhang
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one
 ```
 
+# choose IEEE conference or Springer LNCS Conference procedings
+
+```
+make ieee 
+```
+or
+```
+make springer
+```
+
+run this to switch template. You need to do it once before generating the pdf
+
 # Build the pdf paper
 
 Install a latex distribution, pandoc and makefile
@@ -34,7 +46,7 @@ sudo apt install pandoc pandoc-citeproc texlive-full build-essential
 Use the makefile:
 
 ```
-make all
+make pdf
 ```
 
 # GitHub Action

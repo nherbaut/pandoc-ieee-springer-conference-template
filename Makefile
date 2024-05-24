@@ -14,9 +14,12 @@ FLAGS_PDF = --template=templates/template.latex
 
 all: pdf
 
-pdf: 
+pdf: templates/template.latex
 	pandoc  --citeproc -o $(OUTPUT)/paper.pdf $(FLAGS) $(FLAGS_PDF) $(FILES)
 	pandoc  --citeproc -o $(OUTPUT)/paper.tex $(FLAGS) $(FLAGS_PDF) $(FILES)
+
+templates/template.latex:
+	@echo switching to ieee mode && cp templates/template.latex.ieee templates/template.latex
 
 clean:
 	rm build/*
